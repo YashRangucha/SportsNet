@@ -7,3 +7,5 @@ from django.http import HttpResponse
 def index(request):
     return render(request, 'Web_App/index.html')
 
+def sports(request):
+    return render(request, 'Web_App/sports.html')
