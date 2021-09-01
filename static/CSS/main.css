@@ -31,3 +31,16 @@ body h1{
 .container1 .container .row #but{
     padding-top: 20px;
 }
+
+.container2{
+    background-color:green;
+    width: 90%;
+    height: 85vh;
+    padding-top: 25px;
+    border-radius: 25px;
+    box-shadow: lightslategray ;
+}
+
+.container2 #gut{
+    width: 95%;
+}
