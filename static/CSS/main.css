@@ -1,0 +1,33 @@
+nav{
+    background-color: black;
+    padding-bottom: 15px;
+    margin-bottom: 10px;
+}
+
+body h1{
+    padding-bottom: 10px;
+}
+
+.container1{
+    background-color:black;
+    width: 70%;
+    height: 50vh;
+    padding-top: 25px;
+    border-radius: 25px;
+    box-shadow: lightslategray ;
+}
+
+.container1 #cart-icon{
+    width: 90%;
+    height: 30vh;
+    
+}
+
+.container1 .container .row #par{
+    padding-top: 15px;
+    color: cornsilk;
+}
+
+.container1 .container .row #but{
+    padding-top: 20px;
+}
