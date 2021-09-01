@@ -9,3 +9,6 @@ def index(request):
 
 def sports(request):
     return render(request, 'Web_App/sports.html')
+
+def organise(request):
+    return render(request, 'Web_App/organise.html')
