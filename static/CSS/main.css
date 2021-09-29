@@ -4,17 +4,14 @@ nav{
     margin-bottom: 10px;
 }
 
-body{
-    background-color: crimson;
-}
 
 body h1{
     padding-bottom: 10px;
-    color: rgb(243, 209, 216);
+    color: white;
 }
 
 .container1{
-    background-image:linear-gradient(black 90%,rgb(58, 54, 54),grey);
+    background-image:linear-gradient(black 93%,rgb(56, 53, 53),grey);
     width: 70%;
     height: 50vh;
     padding-top: 25px;
@@ -46,7 +43,18 @@ body h1{
     box-shadow: lightslategray ;
 }
 
+.container2 h3{
+    padding-left: 20px;
+}
+
 .container2 #gut{
     width: 95%;
-    height: 90%;
+    height: 100%;
+}
+.img-thumbnail {
+    padding: .25rem;
+    
+    border-radius: .25rem;
+    max-width: 100%;
+    height: auto;
 }
