@@ -12,7 +12,6 @@
     
     <!--UI CSS-->
     <link rel="stylesheet" href="{% static 'CSS/styles.css' %}">
-    <link rel="stylesheet" href="{% static 'CSS/timeline.css' %}">
   </head>
 <body >
       <div class="Front-header">
@@ -42,6 +41,29 @@
         </nav>
       </div>
 
+
+      <h1 style="text-align: center;">Sports News</h1>
+
+      <div class="container" >
+          
+              {% for i in articles %}
+
+              <div class="card rounded shadow-lg m-2" style="width: 25rem;">
+                  <img src="{{ i.urlToImage }}" class="card-img-top" alt="...">
+                  <div class="card-body">
+                  <p class="card-text">{{ i.author }}</p>
+                  <h5 class="card-title">{{ i.title }}</h5>
+                  <p class="card-title">{{ i.source.name }}</p>
+                  <p class="card-text">{{ i.description }}</p>
+                  <hr>
+                  <a href="{{ i.url }}" target="_blank" class="btn btn-success m-1">See News</a>
+                  </div>
+              </div>
+
+              {% endfor %}
+          
+          
+      </div>
 
     <script src="https://unpkg.com/@popperjs/core@2/dist/umd/popper.js"></script>
     <script defer async src="https://apply.devfolio.co/v2/sdk.js"></script>

@@ -2,10 +2,22 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from .models import *
 
+import requests
+API_KEY = '0e55381042014509ade53f0065695efc'
+
 # Create your views here.
 
 def index(request):
-    return render(request, 'Web_App/index.html')
+    url = f'https://newsapi.org/v2/top-headlines?country=in&category=sports&apiKey={API_KEY}'
+    response = requests.get(url)
+    data = response.json()
+    articles = data['articles']
+
+
+    context = {
+        'articles' : articles
+    }
+    return render(request, 'Web_App/index.html', context)
 
 def sports(request):
     return render(request, 'Web_App/sports.html')
