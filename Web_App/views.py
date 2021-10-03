@@ -12,3 +12,6 @@ def sports(request):
 
 def organise(request):
     return render(request, 'Web_App/organise.html')
+
+def event(request):
+    return render(request, 'Web_App/event.html')
