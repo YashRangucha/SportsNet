@@ -40,14 +40,16 @@
           </div>
         </nav>
       
+      
 
+      <div class="container" style="margin-left: 23cm;" >
 
-      <div class="container" >
+        <h3 style="margin-left: 3.5cm;">News Feed</h3>
           
               {% for i in articles %}
 
               <div class="card rounded shadow-lg m-2" style="width: 25rem; height: auto;">
-                  <img src="{{ i.urlToImage }}" class="card-img-top" alt="...">
+                  <img src="{{ i.urlToImage }}" style="height: auto;" class="card-img-top" alt="...">
                   <div class="card-body">
                   <p class="card-text" style="color: black; text-align: left;">{{ i.author }}</p>
                   <h5 class="card-title" style="color: black; text-align: left;">{{ i.title }}</h5>
