@@ -44,12 +44,18 @@
       <div class="container2 h-100 pb-4">
         <h3 style="color: rgb(255, 255, 255); text-align: left;">Upcoming Football Events</h3><br>
         <div class="row row-cols-2 row-cols-lg-4 g-2 g-lg-3" id="gut">
-              <div class="col" id="f_image">
-                  <div class="p-3 border-0" style="background-color: white"><!--<img src="{% static 'images/football_s.jpg' %}" alt=""> Football</div>-->
-                      <img src="{% static 'images/football_s_edited.jpg' %}" alt="..." class="img-thumbnail">
-                      Football
-                  </div>
-              </div>
+             
+              
+              <div class="col">
+                <div class="p-3 border-0" style="background-color: white"><!--<img src="{% static 'images/football_s.jpg' %}" alt=""> Football</div>-->
+                <a href="{% url 'eventform' %}">
+                    <img src="{% static 'images/football_s_edited.jpg' %}" alt="..." class="img-thumbnail h-100 w-100" >
+                  </a>
+                    Football
+                </div>
+            </div>
+
+
               <div class="col">
                   <div class="p-3 border-0" style="background-color: white"><!--<img src="{% static 'images/football_s.jpg' %}" alt=""> Football</div>-->
                       <img src="{% static 'images/cricket_s.jpg' %}" alt="..." class="img-thumbnail h-100 w-100" >
