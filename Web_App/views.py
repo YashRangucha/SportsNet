@@ -27,6 +27,7 @@ def organise(request):
 
 def event(request):
     return render(request, 'Web_App/event.html')
+    
 def store(request):
     products = Product.objects.all()
     context = {'products':products}

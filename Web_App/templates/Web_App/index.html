@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="{% static 'CSS/styles.css' %}">
   </head>
 <body >
-      <div class="Front-header">
+      
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
           <div class="container-fluid">
             <a class="navbar-brand" href="#" style="font-size: 30px;">SportsNet</a> &nbsp; &nbsp; &nbsp; &nbsp;
@@ -39,22 +39,21 @@
             </div>
           </div>
         </nav>
-      </div>
+      
 
 
-      <h1 style="text-align: center;">Sports News</h1>
 
-      <div class="container" >
+      <div class="container1" style="margin-left: 940px; margin-top: 40px;"  >
           
               {% for i in articles %}
 
-              <div class="card rounded shadow-lg m-2" style="width: 25rem;">
+              <div class="card rounded shadow-lg m-2" style="width: 25rem; height: auto;">
                   <img src="{{ i.urlToImage }}" class="card-img-top" alt="...">
                   <div class="card-body">
-                  <p class="card-text">{{ i.author }}</p>
-                  <h5 class="card-title">{{ i.title }}</h5>
-                  <p class="card-title">{{ i.source.name }}</p>
-                  <p class="card-text">{{ i.description }}</p>
+                  <p class="card-text" style="color: black; text-align: left;">{{ i.author }}</p>
+                  <h5 class="card-title" style="color: black; text-align: left;">{{ i.title }}</h5>
+                  <p class="card-title" style="color: black; ">{{ i.source.name }}</p>
+                  <p class="card-text" style="color: black; text-align: left; " >{{ i.description }}</p>
                   <hr>
                   <a href="{{ i.url }}" target="_blank" class="btn btn-success m-1">See News</a>
                   </div>
