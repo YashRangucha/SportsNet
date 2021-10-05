@@ -53,11 +53,11 @@ def organizer(request):
 
     return render(request, 'Web_App/organizer.html')
 
-def login(request):
-    return render(request, 'Web_App/login.html')
+def yashlogin(request):
+    return render(request, 'Web_App/yashlogin.html')
 
-def register(request):
-    return render(request, 'Web_App/register.html')
+def yashregister(request):
+    return render(request, 'Web_App/yashregister.html')
 
 def storef(request):
     if request.method == "POST":
