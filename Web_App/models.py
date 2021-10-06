@@ -18,3 +18,35 @@ class Product(models.Model):
             url = ''
         return url
     
+class Storef(models.Model):
+    name = models.CharField(blank=True, max_length=30)
+    pname = models.CharField(blank=True, max_length=30)
+    img = models.ImageField(null=True, blank=True)
+    local = models.EmailField(blank=True, max_length=20)
+    desc = models.TextField(blank=True)
+    
+    def __str__(self):
+        return self.name
+
+class Eventform(models.Model):
+    name = models.CharField(blank=True, max_length=30)
+    date = models.CharField(blank=True, max_length=30)
+    email = models.EmailField(max_length=20)
+    number = models.IntegerField()
+    local = models.CharField(blank=True, max_length=122)
+    
+    def __str__(self):
+        return self.name
+
+class Organizer(models.Model):
+    firstname = models.CharField(blank=True, max_length=200)
+    lastname = models.CharField(blank=True, max_length=200)
+    sport = models.CharField(blank=True, max_length=200)
+    email = models.EmailField(max_length=122)
+    phonenumber = models.IntegerField()
+    address = models.TextField(blank=True)
+    code = models.IntegerField()
+    
+
+    def __str__(self):
+        return self.firstname

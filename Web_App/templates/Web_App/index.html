@@ -13,7 +13,7 @@
     <!--UI CSS-->
     <link rel="stylesheet" href="{% static 'CSS/styles.css' %}">
   </head>
-<body >
+<body style="background-color: rgb(13, 9, 53);">
       
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
           <div class="container-fluid">
@@ -30,7 +30,7 @@
                   <a class="nav-link" href="sports">Sports</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="#">Store</a>
+                  <a class="nav-link" href="store">Store</a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link" href="organise">Organize</a>
@@ -42,9 +42,18 @@
       
       
 
-      <div class="container" style="margin-left: 23cm;" >
-
-        <h3 style="margin-left: 3.5cm;">News Feed</h3>
+      <div class="container" >
+        <div class="row">
+          <div class="col-sm-6">
+            <br><br><br><br><h1>LOGO</h1><br><br><br>
+            <h1>
+              <a href="" class="typewrite" data-period="2000" data-type='[ "Dream it.", "Believe it.", "Achieve it.", "Dream it. Believe it. Achieve it." ]'>
+                <span class="wrap"></span>
+              </a>
+            </h1>
+          </div>
+          <div class="col-sm-6">
+            <h3 style="margin-left: 3.5cm;">News Feed</h3>
           
               {% for i in articles %}
 
@@ -61,9 +70,15 @@
               </div>
 
               {% endfor %}
+          </div>
+        </div>
+
+        
           
           
       </div>
+      <!--Bubbles animation-->
+      <script type="text/javascript" src="{% static 'js/bubbles.js' %}"> </script>
 
     <script src="https://unpkg.com/@popperjs/core@2/dist/umd/popper.js"></script>
     <script defer async src="https://apply.devfolio.co/v2/sdk.js"></script>
@@ -83,10 +98,65 @@
         <!-- Jquery -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     
-        <!--Bubbles animation-->
-        <script type="text/javascript" src="{% static 'js/bubbles.js' %}"> </script>
+        
+        <script>
+          var TxtType = function(el, toRotate, period) {
+              this.toRotate = toRotate;
+              this.el = el;
+              this.loopNum = 0;
+              this.period = parseInt(period, 10) || 2000;
+              this.txt = '';
+              this.tick();
+              this.isDeleting = false;
+          };
 
+          TxtType.prototype.tick = function() {
+              var i = this.loopNum % this.toRotate.length;
+              var fullTxt = this.toRotate[i];
 
+              if (this.isDeleting) {
+              this.txt = fullTxt.substring(0, this.txt.length - 1);
+              } else {
+              this.txt = fullTxt.substring(0, this.txt.length + 1);
+              }
+
+              this.el.innerHTML = '<span class="wrap">'+this.txt+'</span>';
+
+              var that = this;
+              var delta = 200 - Math.random() * 100;
+
+              if (this.isDeleting) { delta /= 2; }
+
+              if (!this.isDeleting && this.txt === fullTxt) {
+              delta = this.period;
+              this.isDeleting = true;
+              } else if (this.isDeleting && this.txt === '') {
+              this.isDeleting = false;
+              this.loopNum++;
+              delta = 500;
+              }
+
+              setTimeout(function() {
+              that.tick();
+              }, delta);
+          };
+
+          window.onload = function() {
+              var elements = document.getElementsByClassName('typewrite');
+              for (var i=0; i<elements.length; i++) {
+                  var toRotate = elements[i].getAttribute('data-type');
+                  var period = elements[i].getAttribute('data-period');
+                  if (toRotate) {
+                    new TxtType(elements[i], JSON.parse(toRotate), period);
+                  }
+              }
+              // INJECT CSS
+              var css = document.createElement("style");
+              css.type = "text/css";
+              css.innerHTML = ".typewrite > .wrap { border-right: 0.08em solid #fff}";
+              document.body.appendChild(css);
+          };
+        </script>
         <!-- Bootstrap Bundle with Popper-->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
           integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
